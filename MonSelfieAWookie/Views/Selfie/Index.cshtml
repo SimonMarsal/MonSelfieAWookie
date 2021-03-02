@@ -1,21 +1,14 @@
-﻿@{
+﻿@model List<Selfie>
+
+@{
     ViewData["Title"] = "Selfie";
 
     bool displayImage = true;
-
-    //Liste de models selfie
-    List<Selfie> selfies = new List<Selfie>() {
-
-        new Selfie(){ Id=1, Url="https://c1.staticflickr.com/1/39/85740389_00e3dfb5bf_b.jpg", Titre = "Ioda"},
-        new Selfie(){ Id=2, Url="https://c1.staticflickr.com/1/779/31649499113_374ef73b32_b.jpg", Titre="Chewbacca"}
-    };
 }
 
 <div class="text-center">
     <h1 class="display-4">Les selfies</h1>
 </div>
-
-
 
 <div class="container">
     <div class="row">
@@ -23,7 +16,7 @@
         </div><div class="col-sm">
                   <ul>
 
-                      @foreach (var selfie in selfies)
+                      @foreach (var selfie in Model)
                       {
                           <li>
                               @selfie.Titre
