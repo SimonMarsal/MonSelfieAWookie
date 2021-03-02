@@ -3,6 +3,8 @@ using Microsoft.Extensions.Logging;
 
 using MonSelfieAWookie.Models;
 
+using SelfieAWookie.Core.Domain;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -24,13 +26,14 @@ namespace MonSelfieAWookie.Controllers
         {
             //Liste de models selfie
             var vm = new SelfiesIndexViewModel();
-            vm.Selfies = new List<Selfie>() {
-
-            new Selfie(){ Id=1, Url="https://c1.staticflickr.com/1/39/85740389_00e3dfb5bf_b.jpg", Titre = "Ioda"},
-            new Selfie(){ Id=2, Url="https://c1.staticflickr.com/1/779/31649499113_374ef73b32_b.jpg", Titre="Chewbacca"}
+            vm.Selfies = new List<Selfie>()
+            {
+                new Selfie(){ Id=1, Url="https://c1.staticflickr.com/1/39/85740389_00e3dfb5bf_b.jpg", Titre = "Ioda"},
+                new Selfie(){ Id=2, Url="https://c1.staticflickr.com/1/779/31649499113_374ef73b32_b.jpg", Titre="Chewbacca"}
             };
 
-            vm.Weapons = new List<Weapon>() {
+            vm.Weapons = new List<Weapon>()
+            {
                 new Weapon(){ Id=1, Label="Crossbow", GroupName = "Distance"},
                 new Weapon(){ Id=1, Label="Bow", GroupName = "Distance"},
                 new Weapon(){ Id=1, Label="RainBow", GroupName = "Distance"},

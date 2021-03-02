@@ -1,6 +1,6 @@
 using System;
 
-namespace MonSelfieAWookie.Models
+namespace SelfieAWookie.Core.Domain
 {
     public class Selfie
     {
