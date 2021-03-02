@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Selfie";
+    bool displayImage = true;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Les selfies</h1>
+    <p>Paragraphe</p>
+</div>
+
+<ul>
+    <li>
+        Un Selfie
+        @if (displayImage)
+        {
+            <img src="https://c1.staticflickr.com/1/39/85740389_00e3dfb5bf_b.jpg" height="300px" alt="un wookie" />
+        }
+    </li>
+    <li>Un Selfie2
+        <img src="https://c1.staticflickr.com/1/779/31649499113_374ef73b32_b.jpg" height="300px" alt="un wookie" />
+    </li>
+
+
+
+    
+    <li>Un Selfie3</li>
+    <li>Un Selfie4</li>
+    <li>Un Selfie5</li>
+</ul>
+
+
+<a href="/home">< Retour</a>
