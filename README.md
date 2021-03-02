@@ -32,6 +32,17 @@ principe des 12 cases
 - Viewbag
 
 
+Exercice boss du mardi 2 mars :
+Construire une page qui liste les wookies
+wookie : id, prénom, nbpoils, nombre de selfies, arme de préférence, nb d'armes auxiliaires
+
+je veux une liste qui affiche les wookies>tableau avec comme colonne :
+-prénom - arme de préférence - nb d'armes auxiliaires - nombre de selfies
+
+Filtres
+on peut filtrer la liste par :
+arme de préférence, nom du selfie
+
 
 
 Livres : 
