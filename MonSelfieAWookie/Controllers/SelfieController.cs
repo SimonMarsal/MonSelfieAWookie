@@ -30,13 +30,17 @@ namespace MonSelfieAWookie.Controllers
             };
 
             List<Weapon> weapons = new List<Weapon>() {
-                new Weapon(){ Id=1, Label="Crossbow"},
-                new Weapon(){ Id=1, Label="PistoLaser"},
+                new Weapon(){ Id=1, Label="Crossbow", GroupName = "Distance"},
+                new Weapon(){ Id=1, Label="Bow", GroupName = "Distance"},
+                new Weapon(){ Id=1, Label="RainBow", GroupName = "Distance"},
+                new Weapon(){ Id=1, Label="PistoLaser", GroupName = "Cac"},
+                new Weapon(){ Id=1, Label="Fusil", GroupName = "Cac"},
             };
 
             //viewbag
             ViewBag.Weapons = weapons;
             return View(selfies);
+            ViewData["test"] = "tttt";
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

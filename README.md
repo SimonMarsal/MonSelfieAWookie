@@ -28,8 +28,8 @@ flex, grid
 principe des 12 cases
 
 
-
-
+- Notion de dialogue modèle-vue
+- Viewbag
 
 
 
