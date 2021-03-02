@@ -1,9 +1,8 @@
-﻿@model List<Selfie>
+﻿@model SelfiesIndexViewModel
 
 @{
     ViewData["Title"] = "Selfie";
     bool displayImage = true;
-    List<Weapon> weapons = ViewBag.Weapons;
 }
 
 <div class="text-center">
@@ -16,13 +15,13 @@
         </div><div class="col-sm">
                   <select width="400px">
                       @{
-                          List<string> groups = weapons.Select(s => s.GroupName).Distinct().ToList();
+                          List<string> groups = Model.Weapons.Select(s => s.GroupName).Distinct().ToList();
                       }
                       @foreach (var group in groups)
                       {
                           <optgroup label=@group />
 
-                          @foreach (var weapon in weapons)
+                          @foreach (var weapon in Model.Weapons)
                           {
                               @if (weapon.GroupName == @group)
                               {
@@ -33,7 +32,7 @@
                   </select>
 
                   <ul>
-                      @foreach (var selfie in Model)
+                      @foreach (var selfie in Model.Selfies)
                       {
                           <li>
                               @selfie.Titre
