@@ -18,6 +18,21 @@ D Dependency injection (IoC)
 
 
 
+cshtml = Razor
 
-Pratique
-Razor
+
+Responsive design : 
+ViewPort
+Media query
+flex, grid
+principe des 12 cases
+
+
+
+
+
+
+
+
+Livres : 
+DDD: Patterns Principles and practices of Domain-Driven Design

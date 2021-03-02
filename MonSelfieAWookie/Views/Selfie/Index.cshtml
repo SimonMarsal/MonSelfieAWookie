@@ -15,28 +15,29 @@
     <h1 class="display-4">Les selfies</h1>
 </div>
 
-<ul>
 
-    @foreach (var selfie in selfies)
-    {
-        <li>
-            @selfie.Titre
-            @if (displayImage)
-            {
-                <img src="@selfie.Url" height="300px" alt="un wookie" />
-            }
-        </li>
-    }
 
-    <li>
-        XX
-        @if (displayImage)
-        {
-            <img src="../Images/wookie1.jpg" height="300px" alt="un wookie" />
-        }
-    </li>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        </div><div class="col-sm">
+                  <ul>
 
-</ul>
+                      @foreach (var selfie in selfies)
+                      {
+                          <li>
+                              @selfie.Titre
+                              @if (displayImage)
+                              {
+                                  <img src="@selfie.Url" height="300px" alt="un wookie" />
+                              }
+                          </li>
+                      }
+                  </ul>
+        </div><div class="col-sm">
+        </div>
+    </div>
+</div>
 
 
 <a href="/home">< Retour</a>
