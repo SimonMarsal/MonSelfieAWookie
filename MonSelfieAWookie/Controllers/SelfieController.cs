@@ -29,6 +29,13 @@ namespace MonSelfieAWookie.Controllers
             new Selfie(){ Id=2, Url="https://c1.staticflickr.com/1/779/31649499113_374ef73b32_b.jpg", Titre="Chewbacca"}
             };
 
+            List<Weapon> weapons = new List<Weapon>() {
+                new Weapon(){ Id=1, Label="Crossbow"},
+                new Weapon(){ Id=1, Label="PistoLaser"},
+            };
+
+            //viewbag
+            ViewBag.Weapons = weapons;
             return View(selfies);
         }
 

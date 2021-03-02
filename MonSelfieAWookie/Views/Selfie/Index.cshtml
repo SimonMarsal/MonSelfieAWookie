@@ -2,8 +2,8 @@
 
 @{
     ViewData["Title"] = "Selfie";
-
     bool displayImage = true;
+    List<Weapon> weapons = ViewBag.Weapons;
 }
 
 <div class="text-center">
@@ -14,8 +14,14 @@
     <div class="row">
         <div class="col-sm">
         </div><div class="col-sm">
-                  <ul>
+        <select>
+            @foreach(var weapon in weapons)
+            {
+                <option>@weapon.Label</option>
+            }
+        </select>
 
+                  <ul>
                       @foreach (var selfie in Model)
                       {
                           <li>
@@ -30,6 +36,7 @@
         </div><div class="col-sm">
         </div>
     </div>
+    
 </div>
 
 
