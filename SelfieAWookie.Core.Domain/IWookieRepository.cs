@@ -4,8 +4,7 @@ using System.Text;
 
 namespace SelfieAWookie.Core.Domain
 {
-    public interface IWookieRepository
+    public interface IWookieRepository : IMainRepository<Wookie>
     {
-        IList<Wookie> GetAll();
     }
 }

@@ -2,7 +2,8 @@
 
 namespace SelfieAWookie.Core.Domain
 {
-    public interface ISelfieRepository : IMainRepository<Selfie>
+    public interface IMainRepository<M>
     {
+        IList<M> GetAll();
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 using SelfieAWookie.Core.Domain;
+using SelfieAWookie.Core.Infrastructure.Selfies;
 using SelfieAWookie.Core.Infrastructure.Wookies;
 
 using System;
@@ -30,7 +31,7 @@ namespace MonSelfieAWookie
             services.AddControllersWithViews();
 
             services.AddScoped<IWookieRepository, MemoryWookieRepository>();
-            services.AddScoped<ISelfieRepository, MemorySelfieRepository>();
+            services.AddScoped<ISelfieRepository, JsonSelfieRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -4,6 +4,7 @@ using MonSelfieAWookie.Controllers;
 using MonSelfieAWookie.Models;
 
 using SelfieAWookie.Core.Domain;
+using SelfieAWookie.Core.Infrastructure.Selfies;
 
 using System.Collections.Generic;
 using System.IO;
@@ -26,16 +27,6 @@ namespace SelfieAWookie.Tests.Web
                     new Selfie(){ Id=2, Url="https://c1.staticflickr.com/1/779/31649499113_374ef73b32_b.jpg", Titre="Chewbacca"},
                     new Selfie(){ Id=3, Url="https://c1.staticflickr.com/1/779/31649499113_374ef73b32_b.jpg", Titre="Selfie3"}
                 };
-        }
-
-        private class JsonSelfieRepository : ISelfieRepository
-        {
-            public IList<Selfie> GetAll()
-            {
-                string filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"TestSelfies.json");
-                string jsonResult = File.ReadAllText(filePath);
-                return JsonSerializer.Deserialize<List<Selfie>>(jsonResult);
-            }
         }
 
         #region Public Methods
