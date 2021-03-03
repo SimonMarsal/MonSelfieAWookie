@@ -6,6 +6,16 @@ https://devblogs.microsoft.com/dotnet/introducing-net-5/
 github dotnetcore 5.0
 https://github.com/dotnet/runtime
 
+Design patterns :
+http://refactoring.guru/design-patterns/
+
+
+
+
+
+
+----------------
+
 serveur web dotnetcore
 Tout s'autogère, plus de serveur obligatoire en dotnetcore.
 
@@ -47,3 +57,4 @@ arme de préférence, nom du selfie
 
 Livres : 
 DDD: Patterns Principles and practices of Domain-Driven Design
+C# 3.0 design patterns

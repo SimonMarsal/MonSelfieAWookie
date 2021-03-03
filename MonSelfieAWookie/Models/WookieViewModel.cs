@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 
+using MonSelfieAWookie.Models.Dtos;
+
 using SelfieAWookie.Core.Domain;
 
 using System;
@@ -9,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace MonSelfieAWookie.Models
 {
-    public class SelfiesFinderViewModel
+    public class WookieViewModel
     {
         #region Properties
-        public List<Wookie> Wookies { get; set; }
+        public List<WookieDto> Wookies { get; set; }
 
         //Form elements
         public List<Weapon> MainWeapons { get; set; }

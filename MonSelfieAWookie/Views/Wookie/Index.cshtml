@@ -1,0 +1,59 @@
+﻿@model WookieViewModel
+
+@{
+    ViewData["Title"] = "Wookies";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Recherche de wookies</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            Arme de préférence
+            @*<select width="400px" name="htmlMainWeapon" id="htmlMainWeapon">
+                    <option value="">Choose here</option>
+                    <option value="Sabre vert">Sabre vert</option>
+                    <option value="Sabre vert">Sabre bleu</option>
+                    <option value="Sabre vert">Bow</option>
+                </select>*@
+
+            @Html.DropDownList("htmlMainWeapon", Model.MainWeaponsSelectList, "Select Main weapon")
+
+        </div>
+        <div class="col-sm"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <table class="table table-striped">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Prénom</th>
+                    <th scope="col">Nombre de poils</th>
+                    <th scope="col">nombre de selfies</th>
+                    <th scope="col">Arme de préférence</th>
+                    <th scope="col">Nombre d'armes auxiliaires</th>
+                </tr>
+
+                @foreach (var wookie in Model.Wookies)
+                {
+                    <tr>
+                        <td>@wookie.Id</td>
+                        <td>@wookie.SurName</td>
+                        <td>@wookie.NbPoils</td>
+                        <td>@wookie.SelfieNumber</td>
+                        <td>@wookie.MainWeaponLabel</td>
+                        <td>@wookie.NbSecondaryWeapons</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+<a href="/home">< Retour</a>
