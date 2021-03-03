@@ -18,11 +18,16 @@ namespace MonSelfieAWookie.Controllers
 {
     public class WookieController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<WookieController> _logger;
 
-        public WookieController(ILogger<HomeController> logger)
+        public WookieController(ILogger<WookieController> logger)
         {
             _logger = logger;
+        }
+
+        public WookieController()
+        {
+
         }
 
         public IActionResult Index()

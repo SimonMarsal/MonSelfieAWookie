@@ -1,5 +1,6 @@
 # MonSelfieAWookie
- 
+
+Liens : 
 Introducing .netCore 5
 https://devblogs.microsoft.com/dotnet/introducing-net-5/
 
@@ -11,11 +12,19 @@ http://refactoring.guru/design-patterns/
 
 
 
+Livres : 
+DDD: Patterns Principles and practices of Domain-Driven Design
+C# 3.0 design patterns
+
+
+
+Plugins utiles visual studio :
+Commitizen
 
 
 
 ----------------
-
+Mardi
 serveur web dotnetcore
 Tout s'autogère, plus de serveur obligatoire en dotnetcore.
 
@@ -54,7 +63,8 @@ on peut filtrer la liste par :
 arme de préférence, nom du selfie
 
 
+--
+Mercredi
 
-Livres : 
-DDD: Patterns Principles and practices of Domain-Driven Design
-C# 3.0 design patterns
+Testing : 
+http://agileinaflash.blogspot.com/2009/02/first.html
