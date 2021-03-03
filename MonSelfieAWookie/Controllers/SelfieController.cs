@@ -16,30 +16,29 @@ namespace MonSelfieAWookie.Controllers
 {
     public class SelfieController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public SelfieController(ILogger<HomeController> logger)
+        public SelfieController()
         {
-            _logger = logger;
         }
 
         public IActionResult Index()
         {
             //Liste de models selfie
-            var vm = new SelfiesIndexViewModel();
-            vm.Selfies = new List<Selfie>()
+            var vm = new SelfiesIndexViewModel
             {
-                new Selfie(){ Id=1, Url="https://c1.staticflickr.com/1/39/85740389_00e3dfb5bf_b.jpg", Titre = "Ioda"},
-                new Selfie(){ Id=2, Url="https://c1.staticflickr.com/1/779/31649499113_374ef73b32_b.jpg", Titre="Chewbacca"}
-            };
+                Selfies = new List<Selfie>()
+                {
+                    new Selfie(){ Id=1, Url="https://c1.staticflickr.com/1/39/85740389_00e3dfb5bf_b.jpg", Titre = "Ioda"},
+                    new Selfie(){ Id=2, Url="https://c1.staticflickr.com/1/779/31649499113_374ef73b32_b.jpg", Titre="Chewbacca"}
+                },
 
-            vm.Weapons = new List<Weapon>()
-            {
-                new Weapon(){ Id=1, Label="Crossbow", GroupName = "Distance"},
-                new Weapon(){ Id=1, Label="Bow", GroupName = "Distance"},
-                new Weapon(){ Id=1, Label="RainBow", GroupName = "Distance"},
-                new Weapon(){ Id=1, Label="PistoLaser", GroupName = "Cac"},
-                new Weapon(){ Id=1, Label="Fusil", GroupName = "Cac"},
+                Weapons = new List<Weapon>()
+                {
+                    new Weapon(){ Id=1, Label="Crossbow", GroupName = "Distance"},
+                    new Weapon(){ Id=1, Label="Bow", GroupName = "Distance"},
+                    new Weapon(){ Id=1, Label="RainBow", GroupName = "Distance"},
+                    new Weapon(){ Id=1, Label="PistoLaser", GroupName = "Cac"},
+                    new Weapon(){ Id=1, Label="Fusil", GroupName = "Cac"},
+                }
             };
 
             return View(vm);

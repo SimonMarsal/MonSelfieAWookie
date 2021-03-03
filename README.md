@@ -10,6 +10,8 @@ https://github.com/dotnet/runtime
 Design patterns :
 http://refactoring.guru/design-patterns/
 
+GitHub du projet wookie d'Evan :
+https://github.com/devtobecurious/asp-net-core-mvc-projects
 
 
 Livres : 
@@ -68,3 +70,19 @@ Mercredi
 
 Testing : 
 http://agileinaflash.blogspot.com/2009/02/first.html
+
+Injection de dépendance :
+- interface : faiblement couplé avec les classes
+- on peut paramétrer l'injection automatique
+-tests : création de repository dédié au test et création du controleur avec ces repository
+
+
+Exercice du Mercredi
+Tester l'affichage des selfies
+Ecrire le ou les TU de non régression (min 2)
+
+En TDD :
+Rajouter un repo dédié
+Tester avec ce repo
+Dans le code de l'application, créer et connecter un repo qui va lire les données depuis un fichier csv ou json (newtonsoft)
+

@@ -27,16 +27,18 @@ namespace MonSelfieAWookie.Controllers
         public IActionResult Index()
         {
             //Liste de models selfie
-            var vm = new WookieViewModel();
+            var vm = new WookieViewModel
+            {
+                Wookies = _repository.GetAll().ToList().Convert(),
 
-            vm.Wookies = _repository.GetAll().ToList().Convert();
-
-            vm.MainWeapons = new List<Weapon>()
+                MainWeapons = new List<Weapon>()
                     {
                         new Weapon(){ Id=1, Label="Sabre bleu"},
                         new Weapon(){ Id=2, Label="Sabre vert"},
                         new Weapon(){ Id=3, Label="Bow"}
-                    };
+                    }
+            };
+
             vm.MainWeaponsSelectList = new SelectList(vm.MainWeapons, "Id", "Label");
 
             return View(vm);
