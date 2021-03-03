@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0403EBF3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfieAWookie.Tests.Web", "SelfieAWookie.Tests.Web\SelfieAWookie.Tests.Web.csproj", "{B2D804E8-107A-404F-B436-59ADDA4C11D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfieAWookie.Core.Infrastructure", "SelfieAWookie.Core.Infrastructure\SelfieAWookie.Core.Infrastructure.csproj", "{0217E6FB-B576-4835-BD4F-D445BBE18556}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{B2D804E8-107A-404F-B436-59ADDA4C11D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2D804E8-107A-404F-B436-59ADDA4C11D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2D804E8-107A-404F-B436-59ADDA4C11D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0217E6FB-B576-4835-BD4F-D445BBE18556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0217E6FB-B576-4835-BD4F-D445BBE18556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0217E6FB-B576-4835-BD4F-D445BBE18556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0217E6FB-B576-4835-BD4F-D445BBE18556}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B2B813C2-54F0-4DE0-85A5-079127A3F299} = {49B1CEF4-C923-4275-B51A-A015D68FB81C}
 		{B2D804E8-107A-404F-B436-59ADDA4C11D1} = {0403EBF3-1238-42C9-92D6-6DB1EF8FAFA4}
+		{0217E6FB-B576-4835-BD4F-D445BBE18556} = {49B1CEF4-C923-4275-B51A-A015D68FB81C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {758C9340-3415-4E2B-9DB4-9CB71B7D27BB}
