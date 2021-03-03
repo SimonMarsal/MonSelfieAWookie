@@ -25,10 +25,8 @@
     <ProjectReference Include="..\SelfieAWookie.Core.Domain\SelfieAWookie.Core.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="Resources\Json\TestSelfies.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy $(ProjectDir)Resources\Json\* $(ProjectDir)$(OutDir)&quot;" />
+  </Target>
 
 </Project>

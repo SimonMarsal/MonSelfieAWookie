@@ -13,6 +13,7 @@ http://refactoring.guru/design-patterns/
 GitHub du projet wookie d'Evan :
 https://github.com/devtobecurious/asp-net-core-mvc-projects
 
+https://connectionstrings.com/
 
 Livres : 
 DDD: Patterns Principles and practices of Domain-Driven Design
@@ -74,7 +75,7 @@ http://agileinaflash.blogspot.com/2009/02/first.html
 Injection de dépendance :
 - interface : faiblement couplé avec les classes
 - on peut paramétrer l'injection automatique
--tests : création de repository dédié au test et création du controleur avec ces repository
+- tests : création de repository dédié au test et création du controleur avec ces repository
 
 
 Exercice du Mercredi

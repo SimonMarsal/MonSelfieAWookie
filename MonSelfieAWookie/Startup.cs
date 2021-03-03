@@ -4,8 +4,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 
 using SelfieAWookie.Core.Domain;
+using SelfieAWookie.Core.Infrastructure.Data;
 using SelfieAWookie.Core.Infrastructure.Selfies;
 using SelfieAWookie.Core.Infrastructure.Wookies;
 
@@ -30,8 +32,15 @@ namespace MonSelfieAWookie
         {
             services.AddControllersWithViews();
 
+            ////
+            string connectionString = Configuration.GetConnectionString("MaBddDeSelfies");
+
+            services.AddDbContext<SelfieAWookieDbContext>(
+                o => o.UseSqlServer(connectionString));
+
             services.AddScoped<IWookieRepository, MemoryWookieRepository>();
-            services.AddScoped<ISelfieRepository, MemorySelfieRepository>();
+            services.AddScoped<ISelfieRepository, DbSelfieRepository>();
+            ////
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
