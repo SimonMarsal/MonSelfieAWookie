@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 
 using MonSelfieAWookie.Models;
+using MonSelfieAWookie.Tools;
 
 using SelfieAWookie.Core.Domain;
 
@@ -16,8 +17,11 @@ namespace MonSelfieAWookie.Controllers
 {
     public class SelfieController : Controller
     {
-        public SelfieController()
+        private readonly ISelfieRepository _selfieRepository;
+
+        public SelfieController(ISelfieRepository selfieRepository)
         {
+            _selfieRepository = selfieRepository;
         }
 
         public IActionResult Index()
@@ -25,11 +29,7 @@ namespace MonSelfieAWookie.Controllers
             //Liste de models selfie
             var vm = new SelfiesIndexViewModel
             {
-                Selfies = new List<Selfie>()
-                {
-                    new Selfie(){ Id=1, Url="https://c1.staticflickr.com/1/39/85740389_00e3dfb5bf_b.jpg", Titre = "Ioda"},
-                    new Selfie(){ Id=2, Url="https://c1.staticflickr.com/1/779/31649499113_374ef73b32_b.jpg", Titre="Chewbacca"}
-                },
+                Selfies = _selfieRepository.GetAll().ToList().Convert(),
 
                 Weapons = new List<Weapon>()
                 {
