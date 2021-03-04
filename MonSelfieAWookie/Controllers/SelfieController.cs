@@ -38,6 +38,18 @@ namespace MonSelfieAWookie.Controllers
             return View(vm);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(string formTitre, string formUrl)
+        {
+            return this.View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
