@@ -38,8 +38,9 @@ namespace MonSelfieAWookie
             services.AddDbContext<SelfieAWookieDbContext>(
                 o => o.UseSqlServer(connectionString));
 
-            services.AddScoped<IWookieRepository, MemoryWookieRepository>();
+            services.AddScoped<IWookieRepository, DbWookieRepository>();
             services.AddScoped<ISelfieRepository, DbSelfieRepository>();
+            services.AddScoped<IWeaponRepository, DbWeaponRepository>();
             ////
         }
 

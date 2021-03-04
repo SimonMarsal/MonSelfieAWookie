@@ -18,10 +18,12 @@ namespace MonSelfieAWookie.Controllers
     public class SelfieController : Controller
     {
         private readonly ISelfieRepository _selfieRepository;
+        private readonly IWeaponRepository _weaponRepository;
 
-        public SelfieController(ISelfieRepository selfieRepository)
+        public SelfieController(ISelfieRepository selfieRepository, IWeaponRepository weaponRepository)
         {
             _selfieRepository = selfieRepository;
+            _weaponRepository = weaponRepository;
         }
 
         public IActionResult Index()
@@ -30,15 +32,7 @@ namespace MonSelfieAWookie.Controllers
             var vm = new SelfiesIndexViewModel
             {
                 Selfies = _selfieRepository.GetAll().ToList().Convert(),
-
-                Weapons = new List<Weapon>()
-                {
-                    new Weapon(){ Id=1, Label="Crossbow", GroupName = "Distance"},
-                    new Weapon(){ Id=1, Label="Bow", GroupName = "Distance"},
-                    new Weapon(){ Id=1, Label="RainBow", GroupName = "Distance"},
-                    new Weapon(){ Id=1, Label="PistoLaser", GroupName = "Cac"},
-                    new Weapon(){ Id=1, Label="Fusil", GroupName = "Cac"},
-                }
+                Weapons = _weaponRepository.GetAll().ToList()
             };
 
             return View(vm);

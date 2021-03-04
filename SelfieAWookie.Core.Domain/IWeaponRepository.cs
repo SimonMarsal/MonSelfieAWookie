@@ -2,7 +2,7 @@
 
 namespace SelfieAWookie.Core.Domain
 {
-    public interface IWeaponRepository : IMainRepository<Weapon>
+    public interface ISelfieRepository : IMainRepository<Selfie>
     {
     }
 }

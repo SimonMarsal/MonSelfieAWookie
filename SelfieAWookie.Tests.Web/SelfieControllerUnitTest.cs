@@ -34,9 +34,10 @@ namespace SelfieAWookie.Tests.Web
         public void ShouldReturnListOfSelfies()
         {
             FakeSelfieRepository fakeRepo = new FakeSelfieRepository();
+            OtherWeaponRepository fakeWeaponRepo = new OtherWeaponRepository();
 
             //1-Arrange
-            SelfieController ctrl = new SelfieController(fakeRepo);
+            SelfieController ctrl = new SelfieController(fakeRepo, fakeWeaponRepo);
 
             //2-Act
             //Index renvoie un ViewResult
@@ -60,9 +61,10 @@ namespace SelfieAWookie.Tests.Web
         public void ShouldReturnListOfSelfiesFromJson()
         {
             JsonSelfieRepository fakeRepo = new JsonSelfieRepository();
+            OtherWeaponRepository fakeWeaponRepo = new OtherWeaponRepository();
 
             //1-Arrange
-            SelfieController ctrl = new SelfieController(fakeRepo);
+            SelfieController ctrl = new SelfieController(fakeRepo, fakeWeaponRepo);
 
             //2-Act
             //Index renvoie un ViewResult

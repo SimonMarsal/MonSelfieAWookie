@@ -15,6 +15,10 @@ https://github.com/devtobecurious/asp-net-core-mvc-projects
 
 https://connectionstrings.com/
 
+options de raltions EF
+https://docs.microsoft.com/en-us/ef/core/querying/related-data/lazy
+https://docs.microsoft.com/en-us/ef/core/querying/related-data/explicit
+
 Livres : 
 DDD: Patterns Principles and practices of Domain-Driven Design
 C# 3.0 design patterns
