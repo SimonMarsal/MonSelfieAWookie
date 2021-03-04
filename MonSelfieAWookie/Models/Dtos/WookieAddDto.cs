@@ -6,5 +6,6 @@ namespace MonSelfieAWookie.Models.Dtos
     {
         public string Nom { get; set; }
         public int NbPoils { get; set; }
+        public int WeaponId { get; set; }
     }
 }

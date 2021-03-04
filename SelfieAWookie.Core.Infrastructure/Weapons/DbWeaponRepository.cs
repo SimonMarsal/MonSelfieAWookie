@@ -1,4 +1,6 @@
-﻿using SelfieAWookie.Core.Domain;
+﻿using Microsoft.EntityFrameworkCore;
+
+using SelfieAWookie.Core.Domain;
 using SelfieAWookie.Core.Infrastructure.Data;
 
 using System.Collections.Generic;
@@ -33,9 +35,7 @@ namespace SelfieAWookie.Core.Infrastructure.Selfies
         public IList<Weapon> GetAll()
             => _context.Weapons.ToList();
 
-        public Task<IList<Weapon>> GetAllAsync()
-        {
-            throw new System.NotImplementedException();
-        }
+        public async Task<IList<Weapon>> GetAllAsync()
+            => await _context.Weapons.AsNoTracking().ToListAsync();
     }
 }

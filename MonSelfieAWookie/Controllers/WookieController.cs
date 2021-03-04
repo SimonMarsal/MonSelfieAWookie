@@ -18,10 +18,12 @@ namespace MonSelfieAWookie.Controllers
     public class WookieController : Controller
     {
         private readonly IWookieRepository _repository;
+        private readonly IWeaponRepository _weaponRepository;
 
-        public WookieController(IWookieRepository wookieRepository)
+        public WookieController(IWookieRepository wookieRepository, IWeaponRepository weaponRepository)
         {
             _repository = wookieRepository;
+            _weaponRepository = weaponRepository;
         }
 
         public async Task<IActionResult> Index()
@@ -55,13 +57,21 @@ namespace MonSelfieAWookie.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            return View();
+            //Création d'un WookieAddViewModel contenant la liste des armes prinsipales disponibles
+            var mainweapons = await _weaponRepository.GetAllAsync();
+
+            var vm = new WookieAddViewModel() { MainWeapons = mainweapons.ToList().Convert(),
+                MainWeaponsSelectList = mainweapons.ToList().ConvertToSelectList()
+            };
+
+            return View(vm);
         }
         
         [HttpPost]
-        public async Task<IActionResult> Create(WookieAddDto dto)
+        public async Task<IActionResult> Create(WookieAddViewModel vm)
         {
-            await _repository.CreateAsync(dto.Convert());
+            //Envoi du wookieAddDto au repo pour ajout
+            await _repository.CreateAsync(vm.WookieAddDto.Convert());
             return View();
         }
 
