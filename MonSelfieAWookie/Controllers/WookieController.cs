@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-
+using MonSelfieAWookie.Models.Dtos;
 
 namespace MonSelfieAWookie.Controllers
 {
@@ -49,6 +49,19 @@ namespace MonSelfieAWookie.Controllers
 
         public IActionResult Privacy()
         {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> Create(WookieAddDto dto)
+        {
+            await _repository.CreateAsync(dto.Convert());
             return View();
         }
 

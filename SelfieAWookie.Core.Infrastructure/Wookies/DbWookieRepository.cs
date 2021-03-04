@@ -20,6 +20,19 @@ namespace SelfieAWookie.Core.Infrastructure.Wookies
         {
             this._context = context;
         }
+
+        public void Create(Wookie model)
+        {
+            _context.Woookies.Add(model);
+            _context.SaveChanges();
+        }
+
+        public async Task CreateAsync(Wookie model)
+        {
+            _context.Woookies.Add(model);
+            await _context.SaveChangesAsync();
+        }
+
         #endregion
 
         public IList<Wookie> GetAll()

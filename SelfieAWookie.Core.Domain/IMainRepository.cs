@@ -7,5 +7,7 @@ namespace SelfieAWookie.Core.Domain
     {
         IList<M> GetAll();
         Task<IList<M>> GetAllAsync();
+        void Create(M model);
+        Task CreateAsync(M model);
     }
 }

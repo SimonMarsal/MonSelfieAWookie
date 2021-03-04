@@ -126,3 +126,11 @@ EXPORTER MIGRATION en fichier sql
 dotnet ef migrations script > monfichier.sql
 
 Test ShouldReturnListOfWookiesDataBase : utilisation du Core.InMemory
+
+Boss 3 :
+faire la création d'un wookie
+gérer l'enregistrement
+
+etape 1 : sans les armes
+etape 2 : avec l'arme prinsipale - proposer liste de choix - asp-items
+etape 3 : avec les armes secondaires

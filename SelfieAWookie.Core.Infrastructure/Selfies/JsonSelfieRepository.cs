@@ -11,6 +11,16 @@ namespace SelfieAWookie.Core.Infrastructure.Selfies
 {
     public class JsonSelfieRepository : ISelfieRepository
     {
+        public void Create(Selfie model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task CreateAsync(Selfie model)
+        {
+            throw new NotImplementedException();
+        }
+
         public IList<Selfie> GetAll()
         {
             string filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"TestSelfies.json");

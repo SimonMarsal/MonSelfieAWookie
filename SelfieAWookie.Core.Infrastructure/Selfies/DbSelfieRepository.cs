@@ -22,6 +22,16 @@ namespace SelfieAWookie.Core.Infrastructure.Selfies
         {
             this._context = context;
         }
+
+        public void Create(Selfie model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task CreateAsync(Selfie model)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         public IList<Selfie> GetAll()

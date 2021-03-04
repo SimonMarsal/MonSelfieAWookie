@@ -18,6 +18,16 @@ namespace SelfieAWookie.Core.Infrastructure.Selfies
         {
 
         }
+
+        public void Create(Weapon model)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task CreateAsync(Weapon model)
+        {
+            throw new System.NotImplementedException();
+        }
         #endregion
 
         public IList<Weapon> GetAll()

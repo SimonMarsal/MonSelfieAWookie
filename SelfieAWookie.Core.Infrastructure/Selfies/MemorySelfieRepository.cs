@@ -7,6 +7,16 @@ namespace SelfieAWookie.Core.Infrastructure.Wookies
 {
     public class MemorySelfieRepository : ISelfieRepository
     {
+        public void Create(Selfie model)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task CreateAsync(Selfie model)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IList<Selfie> GetAll()
             => new List<Selfie>()
                 {

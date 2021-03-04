@@ -9,6 +9,16 @@ namespace SelfieAWookie.Core.Infrastructure.Wookies
 {
     public class MemoryWookieRepository : IWookieRepository
     {
+        public void Create(Wookie model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task CreateAsync(Wookie model)
+        {
+            throw new NotImplementedException();
+        }
+
         public IList<Wookie> GetAll()
             => new List<Wookie>()
             {

@@ -11,6 +11,11 @@ namespace MonSelfieAWookie.Tools
     {
         //convertir une liste de wookie en liste de wookieDTO
         public static List<WookieDto> Convert(this List<Wookie> wookies)
-            => wookies.Select(s => new WookieDto(s)).ToList(); 
+            => wookies.Select(s => new WookieDto(s)).ToList();
+
+
+        //convertir wookieAddDto en wookie
+        public static Wookie Convert(this WookieAddDto wookieAddDto)
+            => new Wookie() { Prenom = wookieAddDto.Nom, NbPoils = wookieAddDto.NbPoils };
     }
 }
