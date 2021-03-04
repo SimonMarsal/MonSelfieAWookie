@@ -5,6 +5,7 @@ using SelfieAWookie.Core.Infrastructure.Data;
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SelfieAWookie.Core.Infrastructure.Wookies
 {
@@ -22,7 +23,10 @@ namespace SelfieAWookie.Core.Infrastructure.Wookies
         #endregion
 
         public IList<Wookie> GetAll()
-            => _context.Woookies.Include(i => i.MainWeapon).ToList();
+            => _context.Woookies.Include(i => i.MainWeapon)
+            .Include(i => i.Selfies).ToList();
 
+        public async Task<IList<Wookie>> GetAllAsync()
+            => await _context.Woookies.AsNoTracking().Include(i => i.MainWeapon).ToListAsync();
     }
 }

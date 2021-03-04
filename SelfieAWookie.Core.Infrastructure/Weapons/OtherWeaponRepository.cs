@@ -3,6 +3,7 @@ using SelfieAWookie.Core.Infrastructure.Data;
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SelfieAWookie.Core.Infrastructure.Selfies
 {
@@ -26,5 +27,10 @@ namespace SelfieAWookie.Core.Infrastructure.Selfies
                         new Weapon(){ Id=2, Label="Sabre vert"},
                         new Weapon(){ Id=3, Label="Bow"}
                     };
+
+        public Task<IList<Weapon>> GetAllAsync()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

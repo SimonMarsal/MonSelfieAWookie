@@ -7,6 +7,7 @@ using System.Linq;
 using System.IO;
 using System.Reflection;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace SelfieAWookie.Core.Infrastructure.Selfies
 {
@@ -25,5 +26,10 @@ namespace SelfieAWookie.Core.Infrastructure.Selfies
 
         public IList<Selfie> GetAll()
             => _context.Selfies.ToList();
+
+        public Task<IList<Selfie>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

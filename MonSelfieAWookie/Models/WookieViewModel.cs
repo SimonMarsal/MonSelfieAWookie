@@ -15,10 +15,6 @@ namespace MonSelfieAWookie.Models
     {
         #region Properties
         public List<WookieDto> Wookies { get; set; }
-
-        //Form elements
-        public List<Weapon> MainWeapons { get; set; }
-        public SelectList MainWeaponsSelectList { get; set; }
         #endregion
     }
 }

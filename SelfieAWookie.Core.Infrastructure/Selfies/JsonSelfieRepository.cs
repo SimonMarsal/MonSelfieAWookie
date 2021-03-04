@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace SelfieAWookie.Core.Infrastructure.Selfies
 {
@@ -15,6 +16,11 @@ namespace SelfieAWookie.Core.Infrastructure.Selfies
             string filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"TestSelfies.json");
             string jsonResult = File.ReadAllText(filePath);
             return JsonSerializer.Deserialize<List<Selfie>>(jsonResult);
+        }
+
+        public Task<IList<Selfie>> GetAllAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

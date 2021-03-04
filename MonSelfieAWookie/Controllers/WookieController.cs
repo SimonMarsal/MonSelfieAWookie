@@ -24,30 +24,27 @@ namespace MonSelfieAWookie.Controllers
             _repository = wookieRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            //Liste de models selfie
-            var vm = new WookieViewModel
-            {
-                Wookies = _repository.GetAll().ToList().Convert(),
+            var result = await _repository.GetAllAsync();
+            var wookiesDto = result.ToList().Convert();
 
-                //Données statiques pour affichage dans la combo
-                MainWeapons = new List<Weapon>()
-                    {
-                        new Weapon(){ Id=1, Label="Sabre bleu clair"},
-                        new Weapon(){ Id=2, Label="Sabre vert"},
-                        new Weapon(){ Id=3, Label="Bow"}
-                    }
-            };
-
-            vm.MainWeaponsSelectList = new SelectList(vm.MainWeapons, "Id", "Label");
-
+            var vm = new WookieViewModel() { Wookies = wookiesDto };
             return View(vm);
         }
 
-        public IActionResult Test()
+        public IActionResult WookiesAsJson()
         {
-            return View();
+            return this.Json(_repository.GetAll().ToList().Convert());
+        }
+
+        public async Task<IActionResult> SuperIndex()
+        {
+            var result = await _repository.GetAllAsync();
+            var wookiesDto = result.ToList().Convert();
+
+            var vm = new WookieViewModel() { Wookies = wookiesDto };
+            return View(vm);
         }
 
         public IActionResult Privacy()

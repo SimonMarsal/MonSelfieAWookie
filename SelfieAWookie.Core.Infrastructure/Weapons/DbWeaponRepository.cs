@@ -3,6 +3,7 @@ using SelfieAWookie.Core.Infrastructure.Data;
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SelfieAWookie.Core.Infrastructure.Selfies
 {
@@ -21,5 +22,10 @@ namespace SelfieAWookie.Core.Infrastructure.Selfies
 
         public IList<Weapon> GetAll()
             => _context.Weapons.ToList();
+
+        public Task<IList<Weapon>> GetAllAsync()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

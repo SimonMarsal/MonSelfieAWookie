@@ -11,6 +11,7 @@ using System.IO;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 using Xunit;
 
@@ -27,6 +28,11 @@ namespace SelfieAWookie.Tests.Web
                     new Selfie(){ Id=2, Url="https://c1.staticflickr.com/1/779/31649499113_374ef73b32_b.jpg", Titre="Chewbacca"},
                     new Selfie(){ Id=3, Url="https://c1.staticflickr.com/1/779/31649499113_374ef73b32_b.jpg", Titre="Selfie3"}
                 };
+
+            public Task<IList<Selfie>> GetAllAsync()
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         #region Public Methods

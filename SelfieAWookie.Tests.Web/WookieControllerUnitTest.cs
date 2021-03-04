@@ -9,6 +9,7 @@ using SelfieAWookie.Core.Infrastructure.Data;
 using SelfieAWookie.Core.Infrastructure.Wookies;
 
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using Xunit;
 
@@ -69,6 +70,11 @@ namespace SelfieAWookie.Tests.Web
 
                 },
             };
+
+            public Task<IList<Wookie>> GetAllAsync()
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         #region Public Methods

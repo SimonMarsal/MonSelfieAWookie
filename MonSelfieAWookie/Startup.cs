@@ -68,7 +68,7 @@ namespace MonSelfieAWookie
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Selfie}/{action=Index}/{id?}");
+                    pattern: "{controller=Wookie}/{action=SuperIndex}/{id?}");
             });
         }
     }

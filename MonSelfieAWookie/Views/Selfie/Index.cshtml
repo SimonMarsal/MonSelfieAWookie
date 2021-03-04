@@ -13,24 +13,6 @@
     <div class="row">
         <div class="col-sm">
         </div><div class="col-sm">
-                  <select width="400px">
-                      @{
-                          List<string> groups = Model.Weapons.Select(s => s.GroupName).Distinct().ToList();
-                      }
-                      @foreach (var group in groups)
-                      {
-                          <optgroup label=@group />
-
-                          @foreach (var weapon in Model.Weapons)
-                          {
-                              @if (weapon.GroupName == @group)
-                              {
-                                <option>@weapon.Label</option>
-                              }
-                          }
-                      }
-                  </select>
-
                   <ul>
                       @foreach (var selfie in Model.Selfies)
                       {
