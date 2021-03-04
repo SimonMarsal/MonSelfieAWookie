@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 
 using MonSelfieAWookie.Models;
+using MonSelfieAWookie.Models.Dtos;
 using MonSelfieAWookie.Tools;
 
 using SelfieAWookie.Core.Domain;
@@ -45,7 +46,7 @@ namespace MonSelfieAWookie.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(string formTitre, string formUrl)
+        public async Task<IActionResult> Create(SelfieAddDto dto)
         {
             return this.View();
         }

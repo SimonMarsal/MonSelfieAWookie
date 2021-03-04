@@ -24,6 +24,12 @@ https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/operations#
 https://code-maze.com/migrations-and-seed-data-efcore/
 https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/projects?tabs=dotnet-core-cli
 
+Binding :
+https://docs.microsoft.com/fr-fr/aspnet/core/mvc/models/model-binding?view=aspnetcore-5.0
+
+Fetch (remplace jquery)
+https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 Livres : 
 DDD: Patterns Principles and practices of Domain-Driven Design
