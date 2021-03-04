@@ -15,9 +15,15 @@ https://github.com/devtobecurious/asp-net-core-mvc-projects
 
 https://connectionstrings.com/
 
-options de raltions EF
+options de relations EF
 https://docs.microsoft.com/en-us/ef/core/querying/related-data/lazy
 https://docs.microsoft.com/en-us/ef/core/querying/related-data/explicit
+
+Conseils de migration/seeds
+https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/operations#using-migrationbuildersql
+https://code-maze.com/migrations-and-seed-data-efcore/
+https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/projects?tabs=dotnet-core-cli
+
 
 Livres : 
 DDD: Patterns Principles and practices of Domain-Driven Design
@@ -91,3 +97,18 @@ Rajouter un repo dédié
 Tester avec ce repo
 Dans le code de l'application, créer et connecter un repo qui va lire les données depuis un fichier csv ou json (newtonsoft)
 
+
+Jeudi :
+COMMENT FAIRE UNE MIGRATION
+>dotnet tool install--global dotnet-ef
+>dotnet ef migrations add First
+  ne marche pas, installer sur le main project : EntityFrameworkCore.Design
+>dotnet ef migrations add First --project=..\SelfieAWookie.Core.Infrastructure
+
+a créé des fichiers dans le dossier Migrations, pour configurer la BDD
+
+COMMENT INTEGRER UNE Migrations
+>dotnet ef database update
+
+COMMENT CREER UNE NOUVELLE MIGRATION (ajout nouveau champs)
+>dotnet ef migrations add AvatarUrl --project=..\SelfieAWookie.Core.Infrastructure
