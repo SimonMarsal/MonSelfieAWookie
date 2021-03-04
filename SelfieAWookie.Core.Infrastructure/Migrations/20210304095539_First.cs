@@ -71,6 +71,8 @@ namespace SelfieAWookie.Core.Infrastructure.Migrations
                 name: "IX_Wookie_MainWeaponId",
                 table: "Wookie",
                 column: "MainWeaponId");
+
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

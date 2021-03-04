@@ -107,8 +107,16 @@ COMMENT FAIRE UNE MIGRATION
 
 a créé des fichiers dans le dossier Migrations, pour configurer la BDD
 
-COMMENT INTEGRER UNE Migrations
+COMMENT INTEGRER UNE Migration
 >dotnet ef database update
 
 COMMENT CREER UNE NOUVELLE MIGRATION (ajout nouveau champs)
 >dotnet ef migrations add AvatarUrl --project=..\SelfieAWookie.Core.Infrastructure
+
+COMMENT PRENDRE EN COMPTE UNE Migration en base
+>dotnet ef database update
+
+EXPORTER MIGRATION en fichier sql
+dotnet ef migrations script > monfichier.sql
+
+Test ShouldReturnListOfWookiesDataBase : utilisation du Core.InMemory

@@ -31,9 +31,10 @@ namespace MonSelfieAWookie.Controllers
             {
                 Wookies = _repository.GetAll().ToList().Convert(),
 
+                //Données statiques pour affichage dans la combo
                 MainWeapons = new List<Weapon>()
                     {
-                        new Weapon(){ Id=1, Label="Sabre bleu"},
+                        new Weapon(){ Id=1, Label="Sabre bleu clair"},
                         new Weapon(){ Id=2, Label="Sabre vert"},
                         new Weapon(){ Id=3, Label="Bow"}
                     }

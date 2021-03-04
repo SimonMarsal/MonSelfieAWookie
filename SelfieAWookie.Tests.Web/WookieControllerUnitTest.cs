@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 using MonSelfieAWookie.Controllers;
 using MonSelfieAWookie.Models;
 
 using SelfieAWookie.Core.Domain;
+using SelfieAWookie.Core.Infrastructure.Data;
+using SelfieAWookie.Core.Infrastructure.Wookies;
 
 using System.Collections.Generic;
 
@@ -69,6 +72,9 @@ namespace SelfieAWookie.Tests.Web
         }
 
         #region Public Methods
+        /// <summary>
+        /// Test unitaire qui utilise un autre repo et qui renvoie des donnnées propres au test
+        /// </summary>
         [Fact]
         public void ShouldReturnListOfWookies()
         {
@@ -90,6 +96,40 @@ namespace SelfieAWookie.Tests.Web
             WookieViewModel vm = viewResult.Model as WookieViewModel;
             Assert.True(vm.Wookies.Count == 3);
         }
+
+
+        /// <summary>
+        /// Test unitaire qui utilise le réel Repo lié à la DB
+        /// Change le contexte pour le lier à un INMEMORY
+        /// </summary>
+        [Fact]
+        public void ShouldReturnListOfWookiesDataBase()
+        {
+            DbContextOptionsBuilder optionsBuilder = new DbContextOptionsBuilder();
+            optionsBuilder.UseInMemoryDatabase("SelfieAWookie");
+
+            using var context = new SelfieAWookieDbContext(optionsBuilder.Options);
+            context.Woookies.AddRange(new Wookie() { Id = 1 }, new Wookie() { Id = 2 }, new Wookie() { Id = 3 });
+            context.SaveChanges();
+            IWookieRepository dbRepo = new DbWookieRepository(context);
+
+            //1-Arrange
+            WookieController ctrl = new WookieController(dbRepo);
+
+            //2-Act
+            //Index renvoie un ViewResult
+            IActionResult result = ctrl.Index();
+
+            //3-Assert
+            Assert.IsType<ViewResult>(result);
+            ViewResult viewResult = result as ViewResult;
+
+            //viewResult.Model est de type WookieViewModel
+            Assert.IsType<WookieViewModel>(viewResult.Model);
+            WookieViewModel vm = viewResult.Model as WookieViewModel;
+            Assert.True(vm.Wookies.Count == 3);
+        }
+
         #endregion
     }
 }

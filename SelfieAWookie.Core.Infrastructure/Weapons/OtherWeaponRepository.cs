@@ -20,6 +20,11 @@ namespace SelfieAWookie.Core.Infrastructure.Selfies
         #endregion
 
         public IList<Weapon> GetAll()
-            => null;
+            => new List<Weapon>()
+                    {
+                        new Weapon(){ Id=1, Label="Sabre bleu foncé"},
+                        new Weapon(){ Id=2, Label="Sabre vert"},
+                        new Weapon(){ Id=3, Label="Bow"}
+                    };
     }
 }
