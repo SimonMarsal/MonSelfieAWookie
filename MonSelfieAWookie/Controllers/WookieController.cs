@@ -26,7 +26,7 @@ namespace MonSelfieAWookie.Controllers
             _weaponRepository = weaponRepository;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
             var result = await _repository.GetAllAsync();
             var wookiesDto = result.ToList().Convert();
@@ -75,11 +75,7 @@ namespace MonSelfieAWookie.Controllers
             if (this.ModelState.IsValid)
                 await _repository.CreateAsync(vm.WookieAddDto.Convert());
 
-            var mainweapons = await _weaponRepository.GetAllAsync();
-            vm.MainWeapons = mainweapons.ToList().Convert();
-            vm.MainWeaponsSelectList = mainweapons.ToList().ConvertToSelectList();
-
-            return View(vm);
+            return this.RedirectToAction("Index");
 
             //egalement possible :
             //return await Task.FromResult(View());

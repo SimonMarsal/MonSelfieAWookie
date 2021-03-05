@@ -63,13 +63,8 @@ namespace MonSelfieAWookie
             app.UseRouting();
 
             app.UseAuthorization();
-            
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Selfie}/{action=Create}/{id?}");
-            });
+
+            app.UseCustomRoutes();
         }
     }
 }

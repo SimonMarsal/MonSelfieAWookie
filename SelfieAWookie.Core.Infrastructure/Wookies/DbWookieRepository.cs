@@ -41,6 +41,6 @@ namespace SelfieAWookie.Core.Infrastructure.Wookies
             .Include(i => i.Selfies).ToList();
 
         public async Task<IList<Wookie>> GetAllAsync()
-            => await _context.Woookies.AsNoTracking().Include(i => i.MainWeapon).ToListAsync();
+            => await _context.Woookies.AsNoTracking().Include(i => i.MainWeapon).Include(i => i.Selfies).ToListAsync();
     }
 }
