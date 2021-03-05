@@ -17,6 +17,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using MonSelfieAWookie.Tools;
+using MonSelfieAWookie.Models.Dtos;
 
 namespace MonSelfieAWookie
 {
@@ -41,12 +42,21 @@ namespace MonSelfieAWookie
                 o => o.UseSqlServer(connectionString));
 
             services.AddCustomDI();
+
+            //Préparation du ioptions
+            services.Configure<SecurityItem>(this.Configuration.GetSection("SecurityKey"));
             ////
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //Environnement :
+            if(env.IsEnvironment("Preprod"))
+            {
+
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

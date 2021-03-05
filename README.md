@@ -13,6 +13,9 @@ http://refactoring.guru/design-patterns/
 GitHub du projet wookie d'Evan :
 https://github.com/devtobecurious/asp-net-core-mvc-projects
 
+Schéma globalité sur aspdotnetcore
+https://raw.githubusercontent.com/evan-boissonnot/AspNetCore-Developer-Roadmap/master/aspnetcore-developer-roadmap.png
+
 https://connectionstrings.com/
 
 options de relations EF
@@ -138,6 +141,6 @@ etape 3 : avec les armes secondaires
 Vendredi
 
 Validation
-1-possibilité de le faire en viex (required)
+1-possibilité de le faire en view (required)
 2-ou bien taguer les dto avec [Required]
 3-ou bien utiliser model.IsValid dans le controller avec des règles côté cEF configuration

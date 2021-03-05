@@ -12,6 +12,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using MonSelfieAWookie.Models.Dtos;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace MonSelfieAWookie.Controllers
 {
@@ -19,15 +21,26 @@ namespace MonSelfieAWookie.Controllers
     {
         private readonly IWookieRepository _repository;
         private readonly IWeaponRepository _weaponRepository;
+        private readonly IConfiguration _configuration;
+        private readonly IOptions<SecurityItem> _options;
 
-        public WookieController(IWookieRepository wookieRepository, IWeaponRepository weaponRepository)
+        public WookieController(IWookieRepository wookieRepository, IWeaponRepository weaponRepository, IConfiguration configuration, IOptions<SecurityItem> options)
         {
             _repository = wookieRepository;
             _weaponRepository = weaponRepository;
+            _configuration = configuration;
+            _options = options;
         }
 
         public async Task<IActionResult> Index(int id)
         {
+            //lire le conf
+            //méthode 1
+            var v = _configuration["SecurityKey:Value"];
+
+            //méthode 2
+
+
             var result = await _repository.GetAllAsync();
             var wookiesDto = result.ToList().Convert();
 
