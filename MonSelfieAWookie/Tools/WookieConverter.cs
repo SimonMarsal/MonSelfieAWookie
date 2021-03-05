@@ -16,6 +16,6 @@ namespace MonSelfieAWookie.Tools
 
         //convertir wookieAddDto en wookie
         public static Wookie Convert(this WookieAddDto wookieAddDto)
-            => new Wookie() { Prenom = wookieAddDto.Nom, NbPoils = wookieAddDto.NbPoils/*, MainWeapon =*/   };
+            => new Wookie() { Prenom = wookieAddDto.Nom, NbPoils = wookieAddDto.NbPoils, MainWeapon =new Weapon() { Id = wookieAddDto.WeaponId}};
     }
 }

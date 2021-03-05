@@ -134,3 +134,10 @@ gérer l'enregistrement
 etape 1 : sans les armes
 etape 2 : avec l'arme prinsipale - proposer liste de choix - asp-items
 etape 3 : avec les armes secondaires
+
+Vendredi
+
+Validation
+1-possibilité de le faire en viex (required)
+2-ou bien taguer les dto avec [Required]
+3-ou bien utiliser model.IsValid dans le controller avec des règles côté cEF configuration

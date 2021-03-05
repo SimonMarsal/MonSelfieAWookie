@@ -70,9 +70,19 @@ namespace MonSelfieAWookie.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(WookieAddViewModel vm)
         {
-            //Envoi du wookieAddDto au repo pour ajout
-            await _repository.CreateAsync(vm.WookieAddDto.Convert());
-            return View();
+            //Validation côté code
+            //règles dans WookieEntityTypeConfiguration
+            if (this.ModelState.IsValid)
+                await _repository.CreateAsync(vm.WookieAddDto.Convert());
+
+            var mainweapons = await _weaponRepository.GetAllAsync();
+            vm.MainWeapons = mainweapons.ToList().Convert();
+            vm.MainWeaponsSelectList = mainweapons.ToList().ConvertToSelectList();
+
+            return View(vm);
+
+            //egalement possible :
+            //return await Task.FromResult(View());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

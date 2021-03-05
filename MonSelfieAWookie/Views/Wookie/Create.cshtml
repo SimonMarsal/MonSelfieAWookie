@@ -1,8 +1,9 @@
 ﻿@model WookieAddViewModel
-
 @{
+//Possibilité de construire les listes à afficher ici, en important les objets via viewbag 
 }
-<form method="post">
+
+<form asp-action="Create">
     <div class="row">
         <div class="col-md-4 mb-3">
             <label for="validationCustom01">Nom</label>
@@ -25,19 +26,34 @@
     <div class="row">
         <div class="col-md-4 mb-3">
             <label for="validationCustom01">Arme principale</label>
-            <select asp-for="WookieAddDto.WeaponId" asp-items="Model.MainWeaponsSelectList" required></select>
+            <select asp-for="WookieAddDto.WeaponId" asp-items="Model.MainWeaponsSelectList" class="form-control" required></select>
             <div class="valid-feedback">
                 Looks good!
             </div>
         </div>
     </div>
 
-
-
-
     <div class="row">
         <div class="col">
             <button class="btn btn-primary" type="submit">Ajouter wookie</button>
         </div>
     </div>
+
+
+    @* Autre façon de créer les label et input Nom : ASP.NET DE BASE, conseillé *@
+    @*<div class="row">
+        <div class="col-md-4 mb-3">
+            @Html.LabelFor(l => l.WookieAddDto.Nom, new { @class = "form-label", height = "18px" })
+            @Html.EditorFor(e => e.WookieAddDto.Nom, new { @class = "form-control" })
+        </div>
+    </div>*@
+
+    @* En razorpage *@
+    @*<div class="row">
+        <div class="col-md-4 mb-3">
+            <label asp-for="WookieAddDto.Nom" ></label>
+            <input asp-for="WookieAddDto.Nom" class="form-control"></input>
+        </div>
+    </div>*@
+
 </form>

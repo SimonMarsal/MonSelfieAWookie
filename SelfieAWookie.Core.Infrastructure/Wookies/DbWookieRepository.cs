@@ -30,6 +30,7 @@ namespace SelfieAWookie.Core.Infrastructure.Wookies
         public async Task CreateAsync(Wookie model)
         {
             _context.Woookies.Add(model);
+            _context.Entry(model.MainWeapon).State = EntityState.Detached;
             await _context.SaveChangesAsync();
         }
 
