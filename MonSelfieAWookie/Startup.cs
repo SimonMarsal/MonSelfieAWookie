@@ -73,6 +73,7 @@ namespace MonSelfieAWookie
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseCustomRoutes();
         }

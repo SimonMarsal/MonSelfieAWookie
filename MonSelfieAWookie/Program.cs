@@ -22,6 +22,7 @@ namespace MonSelfieAWookie
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+                ;
     }
 }

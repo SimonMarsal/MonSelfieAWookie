@@ -34,6 +34,11 @@ Fetch (remplace jquery)
 https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
+Sécurité
+Rootme: exercices sur le hacking
+https://www.root-me.org/
+https://docs.microsoft.com/fr-fr/aspnet/core/security/anti-request-forgery?view=aspnetcore-5.0
+
 Livres : 
 DDD: Patterns Principles and practices of Domain-Driven Design
 C# 3.0 design patterns
@@ -138,9 +143,15 @@ etape 1 : sans les armes
 etape 2 : avec l'arme prinsipale - proposer liste de choix - asp-items
 etape 3 : avec les armes secondaires
 
+
 Vendredi
 
 Validation
 1-possibilité de le faire en view (required)
 2-ou bien taguer les dto avec [Required]
 3-ou bien utiliser model.IsValid dans le controller avec des règles côté cEF configuration
+
+Avis formation
+très satisfait, on a des bases solides
+donne envie de créer son petit site
+presque frustré de ne pas aller plus loin et de découvrir des fonctionnalités plus avancées

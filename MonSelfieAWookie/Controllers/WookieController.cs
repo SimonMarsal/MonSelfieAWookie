@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using MonSelfieAWookie.Models.Dtos;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Logging;
 
 namespace MonSelfieAWookie.Controllers
 {
@@ -23,13 +24,16 @@ namespace MonSelfieAWookie.Controllers
         private readonly IWeaponRepository _weaponRepository;
         private readonly IConfiguration _configuration;
         private readonly IOptions<SecurityItem> _options;
+        private readonly ILogger<WookieController> _logger;
 
-        public WookieController(IWookieRepository wookieRepository, IWeaponRepository weaponRepository, IConfiguration configuration, IOptions<SecurityItem> options)
+        public WookieController(IWookieRepository wookieRepository, IWeaponRepository weaponRepository, IConfiguration configuration, IOptions<SecurityItem> options
+            , ILogger<WookieController> logger)
         {
             _repository = wookieRepository;
             _weaponRepository = weaponRepository;
             _configuration = configuration;
             _options = options;
+            _logger = logger;
         }
 
         public async Task<IActionResult> Index(int id)
@@ -39,7 +43,10 @@ namespace MonSelfieAWookie.Controllers
             var v = _configuration["SecurityKey:Value"];
 
             //méthode 2
+            var v2 = _options.Value.Value;
 
+            //log
+            _logger.LogInformation("premier log!");
 
             var result = await _repository.GetAllAsync();
             var wookiesDto = result.ToList().Convert();

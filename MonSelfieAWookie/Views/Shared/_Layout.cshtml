@@ -46,11 +46,15 @@
             @RenderBody()
 
             <environment include="Development">
-                DEV!
+                DEV !
             </environment>
 
-            <environment exclude="Production">
-                PAS PROD
+            <environment exclude="Development">
+                PAS DEV !
+            </environment>
+
+            <environment include="Production">
+                DEV !
             </environment>
 
         </main>
