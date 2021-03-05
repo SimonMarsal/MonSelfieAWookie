@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SelfieAWookie.Core.Infrastructure.Selfies
+namespace SelfieAWookie.Core.Infrastructure.Weapons
 {
     public class DbWeaponRepository : IWeaponRepository
     {

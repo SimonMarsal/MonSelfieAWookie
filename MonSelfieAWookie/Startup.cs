@@ -16,6 +16,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using MonSelfieAWookie.Tools;
+
 namespace MonSelfieAWookie
 {
     public class Startup
@@ -38,9 +40,7 @@ namespace MonSelfieAWookie
             services.AddDbContext<SelfieAWookieDbContext>(
                 o => o.UseSqlServer(connectionString));
 
-            services.AddScoped<IWookieRepository, DbWookieRepository>();
-            services.AddScoped<ISelfieRepository, DbSelfieRepository>();
-            services.AddScoped<IWeaponRepository, DbWeaponRepository>();
+            services.AddCustomDI();
             ////
         }
 
